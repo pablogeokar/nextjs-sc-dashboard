@@ -30,7 +30,7 @@ button {
 
 const theme = {
   colors: {
-    primary: '#0070f3',
+    primary: '#0a3d62',
   },
 }
 
