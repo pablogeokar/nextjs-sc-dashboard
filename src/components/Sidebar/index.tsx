@@ -9,15 +9,6 @@ const Brand = styled.div`
   align-items: center;  
   height: 90px;
   padding: 1rem;
-
-  @media only screen and (max-width: 1200px) {
-    padding-left: 1rem;
-    text-align: center;
-
-    img:last-child{
-      display: none;
-    }
-  }
 `
 
 const Menu = styled.ul`
@@ -69,13 +60,20 @@ const Container = styled.div`
   @media only screen and (max-width: 1200px) {
     width: 70px;
 
+    ${Brand} {
+        padding-left: 2rem;
+        text-align: left;  
+
+      img:last-child{
+        display: none;
+        }  
+    }
+
     &:hover {
       width: ${width};
       z-index: 200;
 
-      ${Brand} {        
-        padding-left: 2rem;
-        text-align: left;           
+      ${Brand} {              
 
         img:last-child{
         display: inline;
@@ -108,7 +106,7 @@ const Container = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    left: -100% !important;
+    left: -100% !important;    
   }
 `
 
