@@ -3,9 +3,6 @@ import { useRouter } from 'next/router'
 import Link from '../Link'
 import styled from 'styled-components'
 
-// Configurações iniciais
-const width = '280px'
-
 const Brand = styled.div`
   display: flex;
   justify-content: center;
@@ -52,9 +49,9 @@ const Container = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  height: 100vh;
-  width: ${width};  
-  background-color: ${({ theme }) => theme.colors.primary};
+  height: 100vh;  
+  width: var(--Sidebar-width);
+  background-color: ${({ theme }) => theme.colors.primary};  
   color: #fff;
   overflow: hidden ;
   transition: width 300ms;
@@ -71,8 +68,8 @@ const Container = styled.div`
         }  
     }
 
-    &:hover {
-      width: ${width};
+    &:hover {      
+      width: var(--Sidebar-width);
       z-index: 200;
 
       ${Brand} {              
@@ -114,7 +111,7 @@ export default function Sidebar() {
     <Container>
       <Brand>
         <img src="/imgs/brand.svg" alt="" />
-        <img src="/imgs/brand-text.svg" alt="" width="150" />
+        <img src="/imgs/brand-text.svg" alt="" max-width="150" />
       </Brand>
       <Menu>
         {

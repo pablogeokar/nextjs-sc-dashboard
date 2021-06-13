@@ -1,6 +1,10 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`  
+:root{
+  --Sidebar-width: 280px;
+}
+
 *{
   margin: 0;
   padding: 0;
