@@ -1,3 +1,6 @@
+import MenuData from '../../../config/menu.json'
+import { useRouter } from 'next/router'
+import Link from '../Link'
 import styled from 'styled-components'
 
 // Configurações iniciais
@@ -15,10 +18,10 @@ const Menu = styled.ul`
   margin-top: 1rem;
 `
 
-const Item = styled.li`    
+const Item = styled.li`  
   width: 100%;
   margin-bottom: 1.7rem;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 
   a{
     display: flex;
@@ -41,8 +44,7 @@ const Item = styled.li`
     padding-right: 1rem;    
   }
   a:hover{
-    border-right: 6px solid #0ed1f3;    
-    font-weight:bold;
+    border-right: 6px solid #0ed1f3;        
   }
 `
 
@@ -92,16 +94,12 @@ const Container = styled.div`
 
     ${Item}{
       a{
-        padding-left: 0;
+        padding-left: 0;      
 
         span:last-child{
           display: none;
         }
-      }
-
-      i{
-        padding-left: .2rem;
-      }
+      }      
     }
   }
 
@@ -111,6 +109,7 @@ const Container = styled.div`
 `
 
 export default function Sidebar() {
+  const { pathname } = useRouter()
   return (
     <Container>
       <Brand>
@@ -118,55 +117,19 @@ export default function Sidebar() {
         <img src="/imgs/brand-text.svg" alt="" width="150" />
       </Brand>
       <Menu>
-        <Item>
-          <a href="#" className="active">
-            <i className="las la-igloo"></i>
-            <span>Início</span>
-          </a>
-        </Item>
-        <Item>
-          <a href="#" >
-            <i className="las la-users"></i>
-            <span>Cadastros</span>
-          </a>
-        </Item>
-        <Item>
-          <a href="#" >
-            <i className="las la-receipt"></i>
-            <span>Depto. Contábil</span>
-          </a>
-        </Item>
-        <Item>
-          <a href="#" >
-            <i className="las la-clipboard"></i>
-            <span>Depto. Fiscal</span>
-          </a>
-        </Item>
-        <Item>
-          <a href="#" >
-            <i className="las la-clipboard"></i>
-            <span>Depto. Financeiro</span>
-          </a>
-        </Item>
-        <Item>
-          <a href="#" >
-            <i className="las la-shopping-bag"></i>
-            <span>Depto. Pessoal</span>
-          </a>
-        </Item>
-        <Item>
-          <a href="#" >
-            <i className="las la-clipboard-list"></i>
-            <span>Tarefas</span>
-          </a>
-        </Item>
-        <Item>
-          <a href="#" >
-            <i className="las la-user-circle"></i>
-            <span>Usuários</span>
-          </a>
-        </Item>
+        {
+          MenuData.map((item, index) => {
+            return (
+              <Item key={index}>
+                <Link href={item.path} className={pathname === item.path ? 'active' : ''} >
+                  <i className={item.iconClass}></i>
+                  <span>{item.label}</span>
+                </Link>
+              </Item>
+            )
+          })
+        }
       </Menu>
-    </Container>
+    </Container >
   )
 }
