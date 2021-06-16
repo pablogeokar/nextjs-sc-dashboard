@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useGlobal } from '../../contexts/GlobalContext'
 
 const Container = styled.div`  
   display: flex;
@@ -29,10 +30,16 @@ const Container = styled.div`
 `
 
 export default function ButtonToggleMenu() {
+  const { isToggle, setIsToggle } = useGlobal()
+
+  function handleToggle() {
+    setIsToggle(!isToggle)
+  }
+
   return (
     <Container>
       <input type="checkbox" id="navToggle" />
-      <label htmlFor="navToggle">
+      <label htmlFor="navToggle" onClick={handleToggle}>
         <i className="las la-bars"></i>
       </label>
     </Container>
