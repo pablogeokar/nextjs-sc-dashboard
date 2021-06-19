@@ -1,6 +1,6 @@
-## Configuração do tema
+## 1 - Configurando o tema
 
-As configurações iniciais do tema estão em `pages/_app_.tsx`:
+As configurações iniciais do tema estão em `src/pages/_app_.tsx`
 
 ```javascript
 const theme = {
@@ -13,4 +13,53 @@ const theme = {
     width: "260px",
   },
 };
+```
+
+## 2 - Configurando as opções da Sidebar
+
+Editar o arquivo `config/sidebar.json`
+
+```json
+[
+  {
+    "path": "/",
+    "iconClass": "las la-igloo",
+    "label": "Início"
+  },
+  {
+    "path": "/cadastros",
+    "iconClass": "las la-users",
+    "label": "Cadastros"
+  },
+  {
+    "path": "#",
+    "iconClass": "las la-receipt",
+    "label": "Depto. Contábil"
+  },
+  {
+    "path": "#",
+    "iconClass": "las la-clipboard",
+    "label": "Depto. Fiscal"
+  },
+  {
+    "path": "#",
+    "iconClass": "las la-users",
+    "label": "Depto. Financeiro"
+  },
+  {
+    "path": "#",
+    "iconClass": "las la-shopping-bag",
+    "label": "Depto. Pessoal"
+  },
+  {
+    "path": "#",
+    "iconClass": "las la-clipboard-list",
+    "label": "Tarefas"
+  },
+  {
+    "path": "#",
+    "iconClass": "las la-user-circle",
+    "label": "Usuários"
+  }
+]
 ```
