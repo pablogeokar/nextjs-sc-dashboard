@@ -2,18 +2,16 @@ import { useGlobal } from '../../contexts/GlobalContext'
 import { Container } from './styles'
 
 export default function Sidebar() {
-  const { isToggle, setIsToggle } = useGlobal()
-
-  function handleClose() {
-    setIsToggle(!isToggle)
-  }
+  const { isToggle } = useGlobal()
 
   function handleShowmMenu(e) {
-    e.currentTarget.className !== 'showMenu' ? e.currentTarget.className = 'showMenu' : e.currentTarget.className = ''
+    e.currentTarget.className !== 'showMenu'
+      ? e.currentTarget.className = 'showMenu'
+      : e.currentTarget.className = ''
   }
 
   return (
-    <Container>
+    <Container isToggle={isToggle}>
       <div className={`sidebar ${isToggle === true && 'close'}`}>
         <div className="logo-details">
           <i className='bx bxl-c-plus-plus'></i>

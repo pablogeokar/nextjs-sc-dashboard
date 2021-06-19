@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+interface ISidebarProps {
+  isToggle?: boolean
+}
+
+export const Container = styled.div<ISidebarProps>`
+--sidebar-width:  ${({ theme }) => theme.sidebar.width} ;
 .sidebar{
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  width: 260px;
+  width: var(--sidebar-width);
   background: ${({ theme }) => theme.colors.sidebar};  
   z-index: 1000;
   transition: all 0.5s ease;
@@ -158,7 +163,7 @@ export const Container = styled.div`
 .sidebar .profile-details{
   position: fixed;
   bottom: 0;
-  width: 260px;
+  width: var(--sidebar-width);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -166,11 +171,10 @@ export const Container = styled.div`
   padding: 6px 0;
   transition: all 0.5s ease;
 }
-.sidebar.close .profile-details{
-  background: none;
-}
+
 .sidebar.close .profile-details{
   width: 78px;
+  background: none;
 }
 .sidebar .profile-details .profile-content{
   display: flex;
@@ -206,8 +210,8 @@ export const Container = styled.div`
 .home-section{
   position: relative; 
   height: calc(100vh - 61px);
-  left: 260px;
-  width: calc(100% - 260px);
+  left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
   transition: all 0.5s ease;
 }
 .sidebar.close ~ .home-section{
@@ -233,5 +237,80 @@ export const Container = styled.div`
   font-weight: 600;
 }
 
+  @media only screen and (max-width: 1200px) {    
+    .sidebar{
+      width: 78px ;
 
+      .logo-details .logo_name{        
+        transition-delay: 0s;
+        opacity: 0;
+        pointer-events: none;
+      }      
+
+      .nav-links{
+        overflow: visible;
+
+        li .sub-menu{
+          position: absolute;
+          left: 100%;
+          top: -10px;
+          margin-top: 0;
+          padding: 10px 20px;
+          border-radius: 0 6px 6px 0;
+          opacity: 0;
+          display: block;
+          pointer-events: none;
+          transition: 0s;
+
+          .link_name{
+            font-size: 18px;
+            opacity: 1;
+            display: block;
+          }
+        }
+
+        li:hover .sub-menu{
+          top: 0;
+          opacity: 1;
+          pointer-events: auto;
+          transition: all 0.4s ease;
+        }
+
+        li a .link_name{
+          opacity: 0;
+          pointer-events: none;
+        }
+       
+
+        li .iocn-link{
+          display: block
+        }
+
+        i.arrow{
+          display: none;
+        }
+      }
+
+      .profile-details{
+        background: none;
+        width: 78px;
+
+        i,
+        .profile_name,
+        .job{
+        display: none;
+        }
+        
+        img{
+          padding: 10px;
+        }
+      }
+    }    
+  }
+
+  @media only screen and (max-width: 768px) {
+    .sidebar{
+      left: -78px;
+    }
+  }
 `

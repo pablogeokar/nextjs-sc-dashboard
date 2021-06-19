@@ -6,7 +6,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;   
 
-  label{
+  span{
     position: absolute;
     overflow: hidden;
     color: #222;
@@ -17,13 +17,20 @@ const Container = styled.div`
     display: none;
   }
 
+  @media only screen and (max-width: 1200px) { 
+    span{
+      display: none;      
+    }
+   }
+
   @media only screen and (max-width: 768px) {
     background: ${({ theme }) => theme.colors.primary};
     border-radius: 50%;
     height: 40px;
     width: 40px;
     color: #fff;    
-    label{
+    span{
+      display: block;
       color: #fff;         
     }
   }
@@ -38,10 +45,9 @@ export default function ButtonToggleMenu() {
 
   return (
     <Container>
-      <input type="checkbox" id="navToggle" />
-      <label htmlFor="navToggle" onClick={handleToggle}>
+      <span onClick={handleToggle}>
         <i className="las la-bars"></i>
-      </label>
+      </span>
     </Container>
   )
 }

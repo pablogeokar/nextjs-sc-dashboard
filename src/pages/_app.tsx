@@ -2,10 +2,6 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { GlobalContextProvider } from '../contexts/GlobalContext'
 
 const GlobalStyle = createGlobalStyle`  
-:root{
-  --Sidebar-width: 260px;
-}
-
 *{
   margin: 0;
   padding: 0;
@@ -39,6 +35,9 @@ const theme = {
     sidebar: '#0a3d62',
     sidebarHover: '#012c4d'
   },
+  sidebar: {
+    width: '260px'
+  }
 }
 
 export default function App({ Component, pageProps }) {
