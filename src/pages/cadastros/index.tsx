@@ -1,4 +1,4 @@
-import Sidebar from '../../components/Sidebar'
+import Sidebar from '../../components/Sidebar_old'
 import styled from 'styled-components'
 
 export default function Cadastros() {

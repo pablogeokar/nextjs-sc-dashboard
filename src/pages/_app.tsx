@@ -3,7 +3,7 @@ import { GlobalContextProvider } from '../contexts/GlobalContext'
 
 const GlobalStyle = createGlobalStyle`  
 :root{
-  --Sidebar-width: 280px;
+  --Sidebar-width: 260px;
 }
 
 *{
@@ -36,6 +36,8 @@ button {
 const theme = {
   colors: {
     primary: '#0a3d62',
+    sidebar: '#0a3d62',
+    sidebarHover: '#012c4d'
   },
 }
 

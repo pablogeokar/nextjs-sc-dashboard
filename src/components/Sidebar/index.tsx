@@ -1,132 +1,145 @@
-import MenuData from '../../../config/menu.json'
-import { useRouter } from 'next/router'
-import Link from '../Link'
-import styled from 'styled-components'
-
-const Brand = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-  height: 90px;
-  padding: 1rem;
-`
-
-const Menu = styled.ul`
-  margin-top: 1rem;
-`
-
-const Item = styled.li`  
-  width: 100%;
-  margin-bottom: 1.7rem;
-  padding-left: 1.5rem;
-
-  a{
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-    display: block;    
-    font-size: 1.1rem;
-  }
-
-  a.active {
-  background: #fff;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  color: ${({ theme }) => theme.colors.primary};
-  border-radius: 10px 0px 0px 10px;
-}
-
-  a > i{
-    font-size: 1.5rem;
-    padding-right: 1rem;    
-  }
-  a:hover{
-    border-right: 6px solid #0ed1f3;        
-  }
-`
-
-const Container = styled.div`
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;  
-  width: var(--Sidebar-width);
-  background-color: ${({ theme }) => theme.colors.primary};  
-  color: #fff;
-  overflow: hidden ;
-  transition: width 300ms;
-
-  @media only screen and (max-width: 1200px) {
-    width: 70px;
-
-    ${Brand} {
-        padding-left: 2rem;
-        text-align: left;  
-
-      img:last-child{
-        display: none;
-        }  
-    }
-
-    &:hover {      
-      width: var(--Sidebar-width);
-      z-index: 200;
-
-      ${Brand} {              
-
-        img:last-child{
-        display: inline;
-        } 
-      }
-
-      ${Item} {        
-        padding-left: 2rem;
-        text-align: left; 
-
-        a span:last-child{
-          display: inline;
-        }  
-      }        
-    }
-
-    ${Item}{
-      a{
-        padding-left: 0;      
-
-        span:last-child{
-          display: none;
-        }
-      }      
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    left: -100% !important;    
-  }
-`
+import { useGlobal } from '../../contexts/GlobalContext'
+import { Container } from './styles'
 
 export default function Sidebar() {
-  const { pathname } = useRouter()
+  const { isToggle, setIsToggle } = useGlobal()
+
+  function handleClose() {
+    setIsToggle(!isToggle)
+  }
+
+  function handleShowmMenu(e) {
+    e.currentTarget.className !== 'showMenu' ? e.currentTarget.className = 'showMenu' : e.currentTarget.className = ''
+  }
+
   return (
     <Container>
-      <Brand>
-        <img src="/imgs/brand.svg" alt="" />
-        <img src="/imgs/brand-text.svg" alt="" max-width="150" />
-      </Brand>
-      <Menu>
-        {
-          MenuData.map((item, index) => {
-            return (
-              <Item key={index}>
-                <Link href={item.path} className={pathname === item.path ? 'active' : ''} >
-                  <i className={item.iconClass}></i>
-                  <span>{item.label}</span>
-                </Link>
-              </Item>
-            )
-          })
-        }
-      </Menu>
-    </Container >
+      <div className={`sidebar ${isToggle === true && 'close'}`}>
+        <div className="logo-details">
+          <i className='bx bxl-c-plus-plus'></i>
+          <span className="logo_name">CodingLab</span>
+        </div>
+        <ul className="nav-links">
+          <li>
+            <a href="#">
+              <i className='bx bx-grid-alt' ></i>
+              <span className="link_name">Dashboard</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="#">Category</a></li>
+            </ul>
+          </li>
+          <li onClick={handleShowmMenu}>
+            <div className="iocn-link">
+              <a href="#">
+                <i className='bx bx-collection' ></i>
+                <span className="link_name">Category</span>
+              </a>
+              <i className='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul className="sub-menu">
+              <li><a className="link_name" href="#">Category</a></li>
+              <li><a href="#">HTML & CSS</a></li>
+              <li><a href="#">JavaScript</a></li>
+              <li><a href="#">PHP & MySQL</a></li>
+            </ul>
+          </li>
+          <li onClick={handleShowmMenu}>
+            <div className="iocn-link showMenu">
+              <a href="#">
+                <i className='bx bx-book-alt' ></i>
+                <span className="link_name">Posts</span>
+              </a>
+              <i className='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul className="sub-menu">
+              <li><a className="link_name" href="#">Posts</a></li>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Login Form</a></li>
+              <li><a href="#">Card Design</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bx-pie-chart-alt-2' ></i>
+              <span className="link_name">Analytics</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="#">Analytics</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bx-line-chart' ></i>
+              <span className="link_name">Chart</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="#">Chart</a></li>
+            </ul>
+          </li>
+          <li onClick={handleShowmMenu}>
+            <div className="iocn-link">
+              <a href="#">
+                <i className='bx bx-plug' ></i>
+                <span className="link_name">Plugins</span>
+              </a>
+              <i className='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul className="sub-menu">
+              <li><a className="link_name" href="#">Plugins</a></li>
+              <li><a href="#">UI Face</a></li>
+              <li><a href="#">Pigments</a></li>
+              <li><a href="#">Box Icons</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bx-compass' ></i>
+              <span className="link_name">Explore</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="#">Explore</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bx-history'></i>
+              <span className="link_name">History</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="#">History</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bx-cog' ></i>
+              <span className="link_name">Setting</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="#">Setting</a></li>
+            </ul>
+          </li>
+          <li>
+            <div className="profile-details">
+              <div className="profile-content">
+                <img src="https://github.com/pablogeokar.png" alt="profile" />
+              </div>
+              <div className="name-job">
+                <div className="profile_name">Pablo George</div>
+                <div className="job">Administrador</div>
+              </div>
+              <i className='bx bx-log-out' ></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      {/* <section className="home-section">
+        <div className="home-content">
+          <i className='bx bx-menu' onClick={handleClose} ></i>
+          <span className="text">Drop Down Sidebar</span>
+        </div>
+      </section> */}
+    </Container>
   )
 }
