@@ -57,6 +57,7 @@ export const Container = styled.div<ISidebarProps>`
   display: none;
 }
 .sidebar .nav-links li{
+  cursor: pointer;
   position: relative;
   list-style: none;
   transition: all 0.4s ease;

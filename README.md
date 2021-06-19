@@ -23,13 +23,25 @@ Editar o arquivo `config/sidebar.json`
 [
   {
     "path": "/",
-    "iconClass": "las la-igloo",
-    "label": "Início"
+    "iconClass": "bx bx-grid-alt",
+    "label": "Dashboard"
   },
   {
-    "path": "/cadastros",
+    "path": "#",
     "iconClass": "las la-users",
-    "label": "Cadastros"
+    "label": "Cadastros",
+    "subMenu": [
+      {
+        "path": "#",
+        "iconClass": "las la-users",
+        "label": "Clientes"
+      },
+      {
+        "path": "#",
+        "iconClass": "las la-users",
+        "label": "Empresas"
+      }
+    ]
   },
   {
     "path": "#",
@@ -39,7 +51,19 @@ Editar o arquivo `config/sidebar.json`
   {
     "path": "#",
     "iconClass": "las la-clipboard",
-    "label": "Depto. Fiscal"
+    "label": "Depto. Fiscal",
+    "subMenu": [
+      {
+        "path": "#",
+        "iconClass": "las la-users",
+        "label": "ICMS"
+      },
+      {
+        "path": "#",
+        "iconClass": "las la-users",
+        "label": "ISS"
+      }
+    ]
   },
   {
     "path": "#",
