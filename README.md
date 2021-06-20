@@ -33,12 +33,10 @@ Editar o arquivo `config/sidebar.json`
     "subMenu": [
       {
         "path": "#",
-        "iconClass": "las la-users",
         "label": "Clientes"
       },
       {
         "path": "#",
-        "iconClass": "las la-users",
         "label": "Empresas"
       }
     ]
@@ -47,43 +45,6 @@ Editar o arquivo `config/sidebar.json`
     "path": "#",
     "iconClass": "las la-receipt",
     "label": "Depto. Contábil"
-  },
-  {
-    "path": "#",
-    "iconClass": "las la-clipboard",
-    "label": "Depto. Fiscal",
-    "subMenu": [
-      {
-        "path": "#",
-        "iconClass": "las la-users",
-        "label": "ICMS"
-      },
-      {
-        "path": "#",
-        "iconClass": "las la-users",
-        "label": "ISS"
-      }
-    ]
-  },
-  {
-    "path": "#",
-    "iconClass": "las la-users",
-    "label": "Depto. Financeiro"
-  },
-  {
-    "path": "#",
-    "iconClass": "las la-shopping-bag",
-    "label": "Depto. Pessoal"
-  },
-  {
-    "path": "#",
-    "iconClass": "las la-clipboard-list",
-    "label": "Tarefas"
-  },
-  {
-    "path": "#",
-    "iconClass": "las la-user-circle",
-    "label": "Usuários"
   }
 ]
 ```

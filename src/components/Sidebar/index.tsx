@@ -17,7 +17,7 @@ export default function Sidebar() {
 
         <div className="logo-details">
           <i className='bx bxl-c-plus-plus'></i>
-          <span className="logo_name">CodingLab</span>
+          <span className="logo_name">CarteiraNET</span>
         </div>
 
         <ul className="nav-links">

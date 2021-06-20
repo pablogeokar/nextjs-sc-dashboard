@@ -11,12 +11,10 @@
     "subMenu": [
       {
         "path": "#",
-        "iconClass": "las la-users",
         "label": "Clientes"
       },
       {
         "path": "#",
-        "iconClass": "las la-users",
         "label": "Empresas"
       }
     ]
@@ -33,12 +31,10 @@
     "subMenu": [
       {
         "path": "#",
-        "iconClass": "las la-users",
         "label": "ICMS"
       },
       {
         "path": "#",
-        "iconClass": "las la-users",
         "label": "ISS"
       }
     ]

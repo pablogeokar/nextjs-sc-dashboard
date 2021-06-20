@@ -196,8 +196,7 @@ export const Container = styled.div<ISidebarProps>`
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job{
   color: #fff;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;  
   white-space: nowrap;
 }
 .sidebar.close .profile-details i,
@@ -309,9 +308,12 @@ export const Container = styled.div<ISidebarProps>`
     }    
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {    
     .sidebar{
-      left: -78px;
+       left: -78px;
+    }
+    .sidebar.close{
+       left: 0;
     }
   }
 `
