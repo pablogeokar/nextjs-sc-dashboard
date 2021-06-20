@@ -1,10 +1,7 @@
 import styled from 'styled-components'
 
-interface ISidebarProps {
-  isToggle?: boolean
-}
 
-export const Container = styled.div<ISidebarProps>`
+export const Container = styled.div`
 --sidebar-width:  ${({ theme }) => theme.sidebar.width} ;
 .sidebar{
   position: fixed;
@@ -13,8 +10,9 @@ export const Container = styled.div<ISidebarProps>`
   height: 100%;
   width: var(--sidebar-width);
   background: ${({ theme }) => theme.colors.sidebar};  
+  box-shadow: 3px 0 2px 0 ${({ theme }) => theme.colors.sidebarHover};    
   z-index: 1000;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease;  
 }
 .sidebar.close{
   width: 78px;
@@ -309,11 +307,13 @@ export const Container = styled.div<ISidebarProps>`
   }
 
   @media only screen and (max-width: 768px) {    
-    .sidebar{
-       left: -78px;
+    .sidebar{      
+      left: -82px;
     }
-    .sidebar.close{
-       left: 0;
+
+    .sidebar.close{       
+      width: 78px ;
+       left: 0;       
     }
   }
 `

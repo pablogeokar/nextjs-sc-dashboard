@@ -12,7 +12,7 @@ export default function Sidebar() {
   }
 
   return (
-    <Container isToggle={isToggle}>
+    <Container>
       <div className={`sidebar ${isToggle === true && 'close'}`}>
 
         <div className="logo-details">
@@ -45,7 +45,7 @@ export default function Sidebar() {
                       <i className='bx bxs-chevron-down arrow' ></i>
                     </div>
                     <ul className="sub-menu">
-                      <li><a className="link_name" href="#">{item.label}</a></li>
+                      <li><a className="link_name">{item.label}</a></li>
                       {
                         item.subMenu.map((i, index) => <li key={index}><a href={i.path}>{i.label}</a></li>)
                       }

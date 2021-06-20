@@ -1,62 +1,60 @@
 [
   {
-    "path": "/",
+    "label": "Dashboard",
     "iconClass": "bx bx-grid-alt",
-    "label": "Dashboard"
+    "path": "/"
   },
   {
-    "path": "#",
-    "iconClass": "las la-users",
     "label": "Cadastros",
-    "subMenu": [
-      {
-        "path": "#",
-        "label": "Clientes"
-      },
-      {
-        "path": "#",
-        "label": "Empresas"
-      }
-    ]
-  },
-  {
-    "path": "#",
-    "iconClass": "las la-receipt",
-    "label": "Depto. Contábil"
-  },
-  {
-    "path": "#",
-    "iconClass": "las la-clipboard",
-    "label": "Depto. Fiscal",
-    "subMenu": [
-      {
-        "path": "#",
-        "label": "ICMS"
-      },
-      {
-        "path": "#",
-        "label": "ISS"
-      }
-    ]
-  },
-  {
-    "path": "#",
     "iconClass": "las la-users",
-    "label": "Depto. Financeiro"
+    "subMenu": [
+      {
+        "label": "Clientes",
+        "path": "#"
+      },
+      {
+        "label": "Empresas",
+        "path": "#"
+      }
+    ]
   },
   {
-    "path": "#",
+    "label": "Depto. Contábil",
+    "iconClass": "las la-receipt",
+    "path": "#"
+  },
+  {
+    "label": "Depto. Fiscal",
+    "iconClass": "las la-clipboard",
+    "subMenu": [
+      {
+        "label": "Clientes",
+        "path": "#"
+      },
+      {
+        "label": "Empresas",
+        "path": "#"
+      }
+    ]
+  },
+  {
+    "label": "Depto. Financeiro",
+    "iconClass": "las la-users",
+    "path": "#"
+  },
+  {
+    "label": "Depto. Pessoal",
     "iconClass": "las la-shopping-bag",
-    "label": "Depto. Pessoal"
+    "path": "#"
   },
   {
-    "path": "#",
+    "label": "Tarefas",
     "iconClass": "las la-clipboard-list",
-    "label": "Tarefas"
+    "path": "#"
   },
   {
-    "path": "#",
+    "label": "Usuários",
     "iconClass": "las la-user-circle",
-    "label": "Usuários"
+    "path": "#"
   }
 ]

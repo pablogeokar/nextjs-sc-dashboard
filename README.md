@@ -22,29 +22,23 @@ Editar o arquivo `config/sidebar.json`
 ```json
 [
   {
-    "path": "/",
+    "label": "Dashboard",
     "iconClass": "bx bx-grid-alt",
-    "label": "Dashboard"
+    "path": "/"
   },
   {
-    "path": "#",
-    "iconClass": "las la-users",
     "label": "Cadastros",
+    "iconClass": "las la-users",
     "subMenu": [
       {
-        "path": "#",
-        "label": "Clientes"
+        "label": "Clientes",
+        "path": "#"
       },
       {
-        "path": "#",
-        "label": "Empresas"
+        "label": "Empresas",
+        "path": "#"
       }
     ]
-  },
-  {
-    "path": "#",
-    "iconClass": "las la-receipt",
-    "label": "Depto. Contábil"
   }
 ]
 ```

@@ -20,7 +20,7 @@ const Container = styled.header<IHeaderProps>`
   background-color: #fff;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  
   position: relative;  
-  top: 0;    
+  top: 0;   
   transition: all 0.5s ease;  
   left: ${props => props.isToggle ? '78px' : `var(--sidebar-width)`};      
   width: ${props => props.isToggle ? 'calc(100% - 78px)' : `calc(100% - var(--sidebar-width))`};  
@@ -51,11 +51,12 @@ const Container = styled.header<IHeaderProps>`
     left: 78px;
   }
 
-  @media only screen and (max-width: 768px) {
-    //width: 100% !important;
-    //left: 0 !important;
+  @media only screen and (max-width: 768px) {   
+
     left: ${props => props.isToggle ? '78px' : '0'};      
+    //left: ${props => props.isToggle ? `var(--sidebar-width)` : '0'};      
     width: ${props => props.isToggle ? `calc(100vw - 78px)` : '100%'};  
+    //width: ${props => props.isToggle ? `calc(100vw - var(--sidebar-width))` : '100%'};  
 
     div{
       flex-direction: column;
