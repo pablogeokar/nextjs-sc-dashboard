@@ -1,0 +1,25 @@
+import styled from 'styled-components'
+
+export const Container = styled.div` 
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px;
+  width: 250px;
+  height: 34px;  
+  border-radius: 8px;
+  background: #ecf0f1;
+
+  i{
+    margin-left: 0;
+    font-size: 26px;
+  }
+
+  input{
+    padding: 4px;
+    font-size: 16px;
+    margin-left: 4px;
+    color: #333;    
+    background: transparent;
+  }
+  
+  `

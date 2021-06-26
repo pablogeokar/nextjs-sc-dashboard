@@ -52,16 +52,21 @@ export const Container = styled.div`
 .sidebar .nav-links::-webkit-scrollbar{
   display: none;
 }
-.sidebar .nav-links li{
+.sidebar .nav-links  li{
   cursor: pointer;
   position: relative;
   list-style: none;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease;  
 }
 .sidebar .nav-links > li:hover{
-  background: ${({ theme }) => theme.colors.sidebarHover}; 
+  background: ${({ theme }) => theme.colors.sidebarHover};   
   border-left: 6px solid ${({ theme }) => theme.colors.sidebarActiveColor}; 
 }
+
+.sidebar .nav-links > li:last-child:hover{
+  border-left: 0;
+}
+
 .sidebar .nav-links li .iocn-link{
   display: flex;
   align-items: center;
@@ -204,13 +209,8 @@ export const Container = styled.div`
 .sidebar .profile-details .job{
   font-size: 12px;
 }
-.home-section{
-  position: relative; 
-  height: calc(100vh - 61px);
-  left: var(--sidebar-width);
-  width: calc(100% - var(--sidebar-width));
-  transition: all 0.5s ease;
-}
+
+/*
 .sidebar.close ~ .home-section{
   left: 78px;
   width: calc(100% - 78px);
@@ -233,6 +233,7 @@ export const Container = styled.div`
   font-size: 20px;
   font-weight: 600;
 }
+*/
 
   @media only screen and (max-width: 1200px) {    
     .sidebar{

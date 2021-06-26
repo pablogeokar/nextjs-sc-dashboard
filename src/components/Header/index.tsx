@@ -2,13 +2,10 @@ import ButtonToggleMenu from './ButtonToggleMenu'
 import { useGlobal } from '../../contexts/GlobalContext'
 import Badge from '../Badge'
 import styled from 'styled-components'
+import Search from './../Search/index';
 
 interface IHeaderProps {
   isToggle?: boolean
-}
-
-interface IBadgeProps {
-  color?: string
 }
 
 const Container = styled.header<IHeaderProps>`
@@ -39,8 +36,9 @@ const Container = styled.header<IHeaderProps>`
   .badges{
       display: flex;
       flex-direction: row;
+      align-items: center;
       gap: 16px;
-      margin-right: 8px;
+      margin-right: 8px;     
     }
 
   @media only screen and (max-width: 1200px) {
@@ -77,6 +75,7 @@ export default function Header() {
         <h2>Início</h2>
       </div>
       <div className="badges">
+        <Search />
         <Badge color="#c46210" value="2" icon="bx bx-bell" />
         <Badge color="#673ab7" value="3" icon="bx bx-envelope" />
       </div>
