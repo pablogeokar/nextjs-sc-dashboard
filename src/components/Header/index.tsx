@@ -1,5 +1,6 @@
-import ButtonToggleMenu from '../ButtonToggleMenu'
+import ButtonToggleMenu from './ButtonToggleMenu'
 import { useGlobal } from '../../contexts/GlobalContext'
+import Badge from '../Badge'
 import styled from 'styled-components'
 
 interface IHeaderProps {
@@ -17,8 +18,7 @@ const Container = styled.header<IHeaderProps>`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background-color: #fff;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  
+  background-color: #fff;  
   position: relative;  
   top: 0;   
   transition: all 0.5s ease;  
@@ -31,15 +31,16 @@ const Container = styled.header<IHeaderProps>`
     align-items: center;
 
   h2{
-    color: #222;
+    color: #868383e6;
     margin-left: 20px;
     }    
   }
 
   .badges{
       display: flex;
-      flex-direction: row;                  
-      margin-right: 5px;            
+      flex-direction: row;
+      gap: 16px;
+      margin-right: 8px;
     }
 
   @media only screen and (max-width: 1200px) {
@@ -53,10 +54,8 @@ const Container = styled.header<IHeaderProps>`
 
   @media only screen and (max-width: 768px) {   
 
-    left: ${props => props.isToggle ? '78px' : '0'};      
-    //left: ${props => props.isToggle ? `var(--sidebar-width)` : '0'};      
-    width: ${props => props.isToggle ? `calc(100vw - 78px)` : '100%'};  
-    //width: ${props => props.isToggle ? `calc(100vw - var(--sidebar-width))` : '100%'};  
+    left: ${props => props.isToggle ? '78px' : '0'};          
+    width: ${props => props.isToggle ? `calc(100vw - 78px)` : '100%'};      
 
     div{
       flex-direction: column;
@@ -68,39 +67,6 @@ const Container = styled.header<IHeaderProps>`
     }  
   }
   `
-const Badge = styled.div<IBadgeProps>`
-    //display: flex;
-    margin-left: 12px;
-
-    a {
-      position: relative;
-    }
-
-    i{
-      font-size: 1.5rem;      
-      color: #5e5c5ce6;
-      z-index: 100;      
-    }
-
-    span{     
-      display: flex ;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      position: absolute;
-      font-size: .8rem;
-      font-weight: lighter;
-      top: -8px;
-      right: -10px;
-      width: 20px;
-      height: 20px;      
-      border-radius: 50%;
-      background-color: ${(props) => props.color}; 
-    }
-
-    
-
-  `
 
 export default function Header() {
   const { isToggle } = useGlobal()
@@ -111,18 +77,8 @@ export default function Header() {
         <h2>Início</h2>
       </div>
       <div className="badges">
-        <Badge color='#c46210'>
-          <a href="">
-            <i className='bx bx-bell' ></i>
-            <span>1</span>
-          </a>
-        </Badge>
-        <Badge color='#673ab7'>
-          <a href="">
-            <i className='bx bx-envelope'></i>
-            <span>12</span>
-          </a>
-        </Badge>
+        <Badge color="#c46210" value="2" icon="bx bx-bell" />
+        <Badge color="#673ab7" value="3" icon="bx bx-envelope" />
       </div>
     </Container>
   )

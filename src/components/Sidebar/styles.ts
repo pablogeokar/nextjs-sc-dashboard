@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const Container = styled.div`
 --sidebar-width:  ${({ theme }) => theme.sidebar.width} ;
 .sidebar{
@@ -9,8 +8,7 @@ export const Container = styled.div`
   left: 0;
   height: 100%;
   width: var(--sidebar-width);
-  background: ${({ theme }) => theme.colors.sidebar};  
-  box-shadow: 3px 0 2px 0 ${({ theme }) => theme.colors.sidebarHover};    
+  background: ${({ theme }) => theme.colors.sidebar};     
   z-index: 1000;
   transition: all 0.5s ease;  
 }
@@ -93,7 +91,7 @@ export const Container = styled.div`
   text-decoration: none;
 }
 .sidebar .nav-links li a .link_name{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #fff;
   transition: all 0.4s ease;
@@ -144,7 +142,7 @@ export const Container = styled.div`
   display: none;
 }
 .sidebar.close .nav-links li .sub-menu .link_name{
-  font-size: 18px;
+  font-size: 16px;
   opacity: 1;
   display: block;
 }
@@ -194,7 +192,7 @@ export const Container = styled.div`
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job{
   color: #fff;
-  font-size: 16px;  
+  font-size: 14px;  
   white-space: nowrap;
 }
 .sidebar.close .profile-details i,
