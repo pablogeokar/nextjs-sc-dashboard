@@ -31,7 +31,7 @@ const Container = styled.header<IHeaderProps>`
     align-items: center;
 
   h2{
-    color: #868383e6;
+    color: #333;
     margin-left: 20px;
     }    
   }

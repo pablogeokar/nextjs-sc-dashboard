@@ -1,6 +1,7 @@
 import { useGlobal } from '../../contexts/GlobalContext'
 import { Container } from './styles'
 import SidebarData from '../../../config/sidebar.json'
+import Link from '../Link'
 
 export default function Sidebar() {
   const { isToggle } = useGlobal()
@@ -27,12 +28,12 @@ export default function Sidebar() {
                 item.subMenu === undefined
                   ?
                   <li key={key}>
-                    <a href={item.path}>
+                    <Link href={item.path}>
                       <i className={item.iconClass} ></i>
                       <span className="link_name">{item.label}</span>
-                    </a>
+                    </Link>
                     <ul className="sub-menu">
-                      <li><a className="link_name" href="#">{item.label}</a></li>
+                      <li><Link href="#" className="link_name">{item.label}</Link></li>
                     </ul>
                   </li>
                   :
@@ -47,7 +48,7 @@ export default function Sidebar() {
                     <ul className="sub-menu">
                       <li><a className="link_name">{item.label}</a></li>
                       {
-                        item.subMenu.map((i, index) => <li key={index}><a href={i.path}>{i.label}</a></li>)
+                        item.subMenu.map((i, index) => <li key={index}><Link href={i.path}>{i.label}</Link></li>)
                       }
                     </ul>
                   </li>
@@ -68,12 +69,6 @@ export default function Sidebar() {
           </li>
         </ul>
       </div>
-      {/* <section className="home-section">
-        <div className="home-content">
-          <i className='bx bx-menu' onClick={handleClose} ></i>
-          <span className="text">Drop Down Sidebar</span>
-        </div>
-      </section> */}
     </Container >
   )
 }
