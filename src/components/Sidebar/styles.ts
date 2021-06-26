@@ -59,7 +59,8 @@ export const Container = styled.div`
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: ${({ theme }) => theme.colors.sidebarHover};  
+  background: ${({ theme }) => theme.colors.sidebarHover}; 
+  border-left: 6px solid ${({ theme }) => theme.colors.sidebarActiveColor}; 
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
