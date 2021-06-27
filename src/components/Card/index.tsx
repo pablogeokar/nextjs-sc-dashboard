@@ -1,14 +1,21 @@
 import { Container } from './styles'
 
-export default function Card() {
+type CardType = {
+  title?: string
+  value?: string
+  iconClass?: string
+  iconColor?: string
+}
+
+export default function Card({ title, value, iconClass, iconColor }: CardType) {
   return (
-    <Container>
+    <Container iconColor={iconColor}>
       <div className="content">
         <div className="header">
-          <i className="las la-wallet"></i>
+          <i className={iconClass}></i>
           <div>
-            <span>Vendas no mês</span>
-            <span>R$ 19.450,00</span>
+            <span>{title}</span>
+            <span>{value}</span>
           </div>
         </div>
 

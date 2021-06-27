@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`  
-  max-width: 250px;
-  //height: 320px;
+type ContainerProps = {
+  iconColor?: string
+}
 
+export const Container = styled.div<ContainerProps>`  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,7 +13,33 @@ export const Container = styled.div`
   background-color: #FFFFFF;
   color: #252422;
   margin-bottom: 20px;
-  position: relative;  
+  position: relative; 
+  padding: 4px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: ${props => props.iconColor}; 
+
+    .header{
+      color: #fff;
+
+      & span:last-child{
+        font-size: 28px;
+      }
+
+      i{
+        color: #fff;
+      }
+    }
+    .footer {
+      color: #fff;
+      opacity: 1;
+
+      i{
+        color: #fff;
+      }
+    }   
+  }
 
   .content{
     display: flex;
@@ -22,8 +49,8 @@ export const Container = styled.div`
     color: #303030;
 
     i{
-      font-size: 48px;
-      color: #7ac29a;
+      font-size: 48px;      
+      color: ${props => props.iconColor};
     }
 
    .header{
@@ -31,19 +58,27 @@ export const Container = styled.div`
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #eeece7;
-      padding: 4px;
+      padding: 6px;
 
       i{
         width: 100px;
+        transition: all ease-in-out 0.3s;
+
+        &:hover{
+          font-size: 60px;          
+        }
       }
 
       & div{
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
+        //padding: 4px;
 
         & span{
           opacity: .8;
-          padding: 2px;
+          //padding: 2px;
+          font-size: 22px;
         }
 
         & span:first-of-type{

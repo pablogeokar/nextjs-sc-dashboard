@@ -18,7 +18,7 @@ export const Container = styled.div`
 
   input{
     padding: 4px;
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 4px;    
     color: #303030;    
     background: transparent;

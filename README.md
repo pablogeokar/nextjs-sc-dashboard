@@ -6,8 +6,10 @@
  <img alt="David" src="https://img.shields.io/david/pablogeokar/nextjs-sc-dashboard">
 </div>
 
-<div>
+<div align="center">
 <img alt="Screenshot" src=".github/dashboard.jpg">
+<img alt="Screenshot" src=".github/dashboard2.jpg" style="max-width: 450px;">
+<img alt="Screenshot" src=".github/dashboard3.jpg" style="max-width: 350px;">
 </div>
 
 ## 1 - Configurando o tema
