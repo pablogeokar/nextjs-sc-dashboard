@@ -8,8 +8,10 @@ export const Container = styled.div`
   height: 34px;  
   border-radius: 8px;
   background: #ecf0f1;
+  
 
   i{
+    color: #303030;
     margin-left: 0;
     font-size: 26px;
   }
@@ -17,9 +19,8 @@ export const Container = styled.div`
   input{
     padding: 4px;
     font-size: 16px;
-    margin-left: 4px;
-    color: #333;    
+    margin-left: 4px;    
+    color: #303030;    
     background: transparent;
-  }
-  
+  }  
   `

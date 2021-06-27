@@ -76,7 +76,7 @@ export default function Header() {
       </div>
       <div className="badges">
         <Search />
-        <Badge color="#c46210" value="2" icon="bx bx-bell" />
+        <Badge color="#c46210" value="1" icon="bx bx-bell" />
         <Badge color="#673ab7" value="3" icon="bx bx-envelope" />
       </div>
     </Container>
