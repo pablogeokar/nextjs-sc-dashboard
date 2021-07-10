@@ -1,5 +1,5 @@
 <div align="center">
-<img alt="Vercel" src="https://img.shields.io/endpoint?url=https://nextjs-dashboard-one.vercel.app/api/handler"> 
+<img alt="Vercel" src="https://img.shields.io/endpoint?url=https://nextjs-dashboard-one.vercel.app/api/deploy"> 
 <a href="https://github.com/pablogeokar/nextjs-sc-dashboard/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/pablogeokar/nextjs-sc-dashboard"></a>
 <a href="https://github.com/pablogeokar/nextjs-sc-dashboard/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/pablogeokar/nextjs-sc-dashboard"></a>
 <a href="https://github.com/pablogeokar/nextjs-sc-dashboard/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/pablogeokar/nextjs-sc-dashboard"></a>
