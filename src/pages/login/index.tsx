@@ -1,4 +1,4 @@
-import { Container } from './styles'
+import { Container } from '../../styles/login.module'
 import { useState } from 'react';
 import { useRouter } from 'next/router'
 
