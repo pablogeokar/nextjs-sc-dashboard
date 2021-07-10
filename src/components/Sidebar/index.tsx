@@ -64,7 +64,9 @@ export default function Sidebar() {
                 <div className="profile_name">Pablo George</div>
                 <div className="job">Administrador</div>
               </div>
-              <i className='bx bx-log-out' ></i>
+              <Link href="/login">
+                <i className='bx bx-log-out' ></i>
+              </Link>
             </div>
           </li>
         </ul>

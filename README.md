@@ -8,8 +8,9 @@
 
 <div align="center">
 <img alt="Screenshot" src=".github/dashboard.jpg">
-<img alt="Screenshot" src=".github/dashboard2.jpg" style="max-width: 450px;">
-<img alt="Screenshot" src=".github/dashboard3.jpg" style="max-width: 350px;">
+<img alt="Screenshot" src=".github/dashboard2.jpg" style="max-width: 250px;">
+<img alt="Screenshot" src=".github/login.jpg" style="max-width: 250px;">
+<img alt="Screenshot" src=".github/dashboard3.jpg" style="max-width: 250px;">
 </div>
 
 ## 1 - Configurando o tema
