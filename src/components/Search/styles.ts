@@ -14,6 +14,7 @@ export const Container = styled.div`
     color: #303030;
     margin-left: 0;
     font-size: 26px;
+    cursor: pointer;
   }
 
   input{
@@ -23,4 +24,9 @@ export const Container = styled.div`
     color: #303030;    
     background: transparent;
   }  
+
+  @media only screen and (max-width: 768px) {      
+    width: 180px;
+    margin-right: 30px;
+  }
   `

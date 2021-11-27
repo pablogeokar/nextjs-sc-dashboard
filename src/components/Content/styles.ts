@@ -23,8 +23,8 @@ export const Container = styled.div<IContentProps>`
     width: calc(100% - 78px);
   }
 
-  @media only screen and (max-width: 768px) {
-    left: 0;
-    width: 100%;
+  @media only screen and (max-width: 768px) {    
+    left: ${props => props.isToggle ? '78px' : `0`};  
+    width: ${props => props.isToggle ? 'calc(100% - 78px)' : `100%`};      
   }
 `

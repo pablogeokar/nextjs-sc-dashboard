@@ -9,7 +9,7 @@ interface IContentProps {
 export default function Content({ children }: IContentProps) {
   const { isToggle } = useGlobal()
   return (
-    <Container isToggle={isToggle}>
+    <Container isToggle={isToggle}>      
       {children}
     </Container>
   )
